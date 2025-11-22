@@ -69,13 +69,18 @@
 
       const S = (x + l + U + H) * y;
       const K = S * r;
-      const V = K * (R / 100);
+      const dutyRate = R * 1.1;
+      const V = K * (dutyRate / 100);
+
+      // ⭐ 중국 원가에 대한 수입부가세 10%
+      const VAT = K * 0.10;
+
 
       const j = m ? (M / m) * (m * L) : 0;
       const z = o + C + B;
       const J = m ? (M / m) * z : 0;
 
-      const W = (K + V + j + J) / (y || 1);
+      const W = (K + V + VAT + j + J) / (y || 1);
       const Y = W / 0.9;
 
       F += Y * y;
